@@ -3,7 +3,8 @@ import "./address.tsp";
 
 @doc("Profiles are connected to a User account and are either personal or business.")
 model Profile {
-
+  @visibility(Lifecycle.Read)
+  @doc("Unique identifier for the profile.")
   id: Guid;
 
   @doc("First name (including middle names).")

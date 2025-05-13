@@ -6,6 +6,8 @@ model RecipentAccount is Account {
 }
 
 model Account {
+  @visibility(Lifecycle.Read)
+  @doc("The unique identifier for the account.")
   id: Guid;
 
   currency: Currency;

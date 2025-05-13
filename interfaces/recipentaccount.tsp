@@ -7,7 +7,7 @@ using Http;
 namespace Wise {
 
 @route("/accounts")
-@tag("Recipient Account")
+@tag("Recipient Accounts")
 interface RecipientAccount {
 
   @summary("List recipient accounts")
@@ -21,9 +21,6 @@ interface RecipientAccount {
   @summary("Create a recipient account")
   /** Recipient is a person or institution who is the ultimate beneficiary of your payment. */
   @post create(@body body: RecipentAccount): Wise.CreateResponse<RecipentAccount>;
-
-  /** Analyze a widget */
- // @route("{id}/analyze") @post analyze(@path id: string): Wise.AnalyzeResponse<Profile>;
 }
 
 }

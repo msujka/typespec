@@ -1,19 +1,7 @@
-"currency": "GBP",
-"type": "sort_code",
-"profile": str(profile_id),
-"ownedByCustomer": True,
-"accountHolderName": "John Doe",
- "details": {
-    "legalType": "PRIVATE",
-    "sortCode": "040075",
-    "accountNumber": "37778842",
-    "dateOfBirth": "1961-01-01"
- }
-}
-
 import "../types.tsp";
 
 model Recipient {
+  @visibility(Lifecycle.Read)
   @doc("The unique identifier for the recipient.")
   id: Guid;
 

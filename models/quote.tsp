@@ -1,9 +1,10 @@
 import "../types.tsp";
 
 model Quote {
-
+  @visibility(Lifecycle.Read)
+  @doc("The unique identifier for the quote.")
   id: Guid;
-  
+
   @doc("The currency you are sending from.")
   sourceCurrency: Currency;
 

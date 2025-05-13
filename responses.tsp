@@ -1,4 +1,7 @@
 import "./errors.tsp";
+import "@typespec/http";
+
+using TypeSpec.Http;
 
 namespace Wise {
 
@@ -23,8 +26,13 @@ union ListResponse<T> {
   serverError: InternalServerError;
 }
 
+model Created <T> {
+  @statusCode httpCode: 201;
+  ...T
+}
+
 union CreateResponse<T> {
-  item: T;
+  item: Created<T>;
   badRequest: BadRequest;
   unauthorized: Unauthorized;
   rateLimit: RateLimit;
