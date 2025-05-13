@@ -101,3 +101,15 @@ Create a JavaScript service project for your TypeSpec:
 
 More information on getting started:
 > https://aka.ms/tsp/hsjs/start
+
+# How to use the Redocly CLI
+
+Step 1 - Install Redocly CLI
+```
+npm i -g @redocly/cli@latest
+```
+
+Step 2 - Build the HTML file
+```
+redocly build-docs tsp-output/schema/openapi.yaml --output=api-reference.html
+```
