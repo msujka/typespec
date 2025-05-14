@@ -49,3 +49,13 @@ Build the static HTML file
 ```
 redocly build-docs tsp-output/schema/openapi.yaml --output=docs/api-reference.html
 ```
+
+# Talks
+
+## APIs at Scale with Typespec
+A talk given by Mandy Whaley from Microsoft at the 2024 Austin API Summit in Austin, Texas.
+[![APIs at Scale with TypeSpec](https://img.youtube.com/vi/yfCYrKaojDo/maxresdefault.jpg)](https://www.youtube.com/watch?v=yfCYrKaojDo)
+
+## Typespec demo with Mark Weitzel, Principal Architect at Microsoft
+Mark Weitzel, Principal Architect at Microsoft joins us to talk about TypeSpec, a new project that makes it easier than ever to author OpenAPI docs.
+[![APIs at Scale with TypeSpec](https://img.youtube.com/vi/c4KwhL6b4Hc/maxresdefault.jpg)](https://www.youtube.com/watch?v=c4KwhL6b4Hc)
