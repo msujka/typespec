@@ -1,3 +1,7 @@
+# About
+
+This GitHub repository demonstrates how to use **[TypeSpec](https://typespec.io/)** to generate example **OpenAPI specifications**. It provides a clear, minimal setup showcasing how TypeSpec definitions can be compiled into OpenAPI output. You can explore the generated API documentation under the **[API-Reference](https://msujka.github.io/typespec/)** section.
+
 # APIs at Scale with TypeSpec
 
 [Official Docs](https://typespec.io/) | [Try TypeSpec Online](https://aka.ms/trytypespec) | [Getting Started](https://typespec.io/docs) | [Language Overview](https://typespec.io/docs/language-basics/overview)
@@ -19,9 +23,6 @@ npm install -g @typespec/compiler
 ## [Usage](https://typespec.io/docs#create-first-typespec-project)
 
 # Quick Start
-
-This example uses the `@typespec/http`, `@typespec/rest`, and `@typespec/openapi3` libraries to define a basic REST service and generate an OpenAPI 3.0 document from it.
-
 Run the following command after you clone this repository
 
 Install the dependencies
@@ -38,9 +39,7 @@ tsp compile .
 
 You can find the emitted OpenAPI output in `./tsp-output/schema/openapi.yaml`.
 
-# [API-Reference](https://msujka.github.io/typespec/)
-
-# How to use the Redocly CLI
+# Use Redocly CLI to update [API-Reference](https://msujka.github.io/typespec/)
 
 Install Redocly CLI
 ```
