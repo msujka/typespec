@@ -18,7 +18,7 @@ npm install -g @typespec/compiler
 
 ## [Usage](https://typespec.io/docs#create-first-typespec-project)
 
-## Quick Start
+# Quick Start
 
 This example uses the `@typespec/http`, `@typespec/rest`, and `@typespec/openapi3` libraries to define a basic REST service and generate an OpenAPI 3.0 document from it.
 
@@ -37,6 +37,8 @@ tsp compile .
 ```
 
 You can find the emitted OpenAPI output in `./tsp-output/schema/openapi.yaml`.
+
+# [API-Reference](https://msujka.github.io/typespec/)
 
 # How to use the Redocly CLI
 
