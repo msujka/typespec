@@ -10,9 +10,9 @@ namespace Wise {
 @tag("Profiles")
 interface Profiles {
 
-  @summary("List profiles")
-  /** List of all profiles belonging to user. */
-  @get list(): Wise.ListResponse<Profile>;
+  /** List all profiles */
+  @summary("List all profiles")
+  @get list (): Wise.ListResponse<Profile>;
 
   @summary("Retrieve a profile")
   /** Retrieve a profile by ID  */

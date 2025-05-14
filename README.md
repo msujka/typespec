@@ -1,7 +1,4 @@
-# typespec
-APIs at Scale with TypeSpec
-
-# TypeSpec
+# APIs at Scale with TypeSpec
 
 [Official Docs](https://typespec.io/) | [Try TypeSpec Online](https://aka.ms/trytypespec) | [Getting Started](https://typespec.io/docs) | [Language Overview](https://typespec.io/docs/language-basics/overview)
 
@@ -19,67 +16,15 @@ TypeSpec is a Microsoft-built, community-supported project. Your ideas, feedback
 npm install -g @typespec/compiler
 ```
 
-#### Tools
-
-The [TypeSpec VS Code extension](https://marketplace.visualstudio.com/items?itemName=typespec.typespec-vscode) can be installed from the VS Code [marketplace](https://marketplace.visualstudio.com/items?itemName=typespec.typespec-vscode) or directly on the command line:
-
-```
-tsp code install
-```
-
-The [TypeSpec VS Extension](https://marketplace.visualstudio.com/items?itemName=typespec.typespecvs) can be installed from the [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=typespec.typespecvs) or directly on the command line:
-
-```
-tsp vs install
-```
-
 ## [Usage](https://typespec.io/docs#create-first-typespec-project)
 
-### TypeSpec to OpenAPI 3.0 Example
+## Quick Start
 
 This example uses the `@typespec/http`, `@typespec/rest`, and `@typespec/openapi3` libraries to define a basic REST service and generate an OpenAPI 3.0 document from it.
 
-Run the following command and select "Generic REST API":
+Run the following command after you clone this repository
 
-```
-tsp init
-```
-
-Hit enter a few times to confirm the defaults.
-
-Copy the contents below into your **main.tsp**:
-
-```typespec
-import "@typespec/http";
-import "@typespec/rest";
-import "@typespec/openapi3";
-
-using Http;
-using Rest;
-
-/** This is a pet store service. */
-@service(#{ title: "Pet Store Service" })
-@server("https://example.com", "The service endpoint")
-namespace PetStore;
-
-@route("/pets")
-interface Pets {
-  list(): Pet[];
-}
-
-model Pet {
-  @minLength(100)
-  name: string;
-
-  @minValue(0)
-  @maxValue(100)
-  age: int32;
-
-  kind: "dog" | "cat" | "fish";
-}
-```
-
-Install the dependencies of main.tsp:
+Install the dependencies
 
 ```
 tsp install
@@ -88,28 +33,19 @@ tsp install
 Compile it to OpenAPI 3.0:
 
 ```
-tsp compile main.tsp --emit @typespec/openapi3
+tsp compile .
 ```
 
-You can find the emitted OpenAPI output in `./tsp-output/openapi.json`.
-
-### Generated JavaScript services require a service runtime:
-> https://nodejs.org/download 
-
-Create a JavaScript service project for your TypeSpec:
-> npx hsjs-scaffold
-
-More information on getting started:
-> https://aka.ms/tsp/hsjs/start
+You can find the emitted OpenAPI output in `./tsp-output/schema/openapi.yaml`.
 
 # How to use the Redocly CLI
 
-Step 1 - Install Redocly CLI
+Install Redocly CLI
 ```
 npm i -g @redocly/cli@latest
 ```
 
-Step 2 - Build the HTML file
+Build the static HTML file
 ```
-redocly build-docs tsp-output/schema/openapi.yaml --output=api-reference.html
+redocly build-docs tsp-output/schema/openapi.yaml --output=docs/api-reference.html
 ```

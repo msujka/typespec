@@ -19,6 +19,13 @@ model Page<T> {
   @lastLink last: url;
 }
 
+model IdempotencyKey {
+
+  @doc("Allows to safely retry requests without the risk of performing the same operation multiple times. By including a unique key (such as a UUID) in the header of POST, or PATCH requests, the server can identify and return the result of the original request if the same key is received again, preventing duplicate resource creation or unintended side effects.")
+  @example("a3bb189e-8bf9-4884-8b27-9f6b2d95f27e")
+  @header IdenpotencyKey: Guid;
+}
+
 union ListResponse<T> {
   items: Page<T>;
   unauthorized: Unauthorized;
@@ -39,6 +46,15 @@ union CreateResponse<T> {
   serverError: InternalServerError;
 }
 
+union CreateResponseIdenpotent<T> {
+  item: Created<T>;
+  badRequest: BadRequest;
+  unauthorized: Unauthorized;
+  conflict: Conflict;
+  rateLimit: RateLimit;
+  serverError: InternalServerError;
+}
+
 union ReadResponse<T> {
   item: T;
   unauthorized: Unauthorized;
@@ -55,6 +71,17 @@ union UpdateResponse<T> {
   rateLimit: RateLimit;
   serverError: InternalServerError;
 }
+
+union UpdateResponseIdenpotent<T> {
+  item: T;
+  badRequest: BadRequest;
+  unauthorized: Unauthorized;
+  notFound: NotFound;
+  conflict: Conflict;
+  rateLimit: RateLimit;
+  serverError: InternalServerError;
+}
+
 union DeleteResponse {
   unauthorized: Unauthorized;
   notFound: NotFound;
