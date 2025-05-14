@@ -48,7 +48,7 @@ npm i -g @redocly/cli@latest
 
 Build the static HTML file
 ```
-redocly build-docs tsp-output/schema/openapi.yaml --output=docs/api-reference.html
+redocly build-docs tsp-output/schema/openapi.yaml --output=docs/index.html
 ```
 
 # Talks
